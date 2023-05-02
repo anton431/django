@@ -2,7 +2,7 @@ from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.shortcuts import render, redirect
 
 from .models import Women
-menu = ['1','2','3','4']
+menu = ['О сайте','Добавить статью','Обратная связь','Войти']
 
 def index(request):
     posts = Women.objects.all()
