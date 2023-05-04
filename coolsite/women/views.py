@@ -42,7 +42,8 @@ def show_post(request, post_slug):
 
     return render(request, 'women/post.html', context=context)
 
-def show_category(request, cat_id):
+def show_category(request, cat_slug):
+    cat_id = get_object_or_404(Category, slug=cat_slug)
     posts = Women.objects.filter(cat_id=cat_id)
 
     if not posts:
@@ -50,7 +51,7 @@ def show_category(request, cat_id):
 
     context = {
         'posts': posts,
-        'cat_selected': cat_id,
+        'cat_selected': cat_slug,
         'menu': menu,
         'title': 'Отображение по рубрикам'
     }
