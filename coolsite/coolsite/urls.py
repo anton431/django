@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from coolsite import settings
-from women.views import index, pageNotFound
+from women.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
