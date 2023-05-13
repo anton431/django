@@ -1,6 +1,7 @@
 from django.urls import path, re_path
 
 from .views import *
+from django.views.decorators.cache import cache_page
 
 urlpatterns = [
     path('', WomenHome.as_view(), name='home'),
