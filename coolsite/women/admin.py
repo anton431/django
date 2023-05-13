@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import *
 
+from .models import *
 
 class WomenAdmin(admin.ModelAdmin):
     list_display = ('id', 'title', 'time_create', 'photo', 'is_published')
@@ -15,6 +15,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'name')
     search_fields = ('name',)
     prepopulated_fields = {"slug": ("name",)}
+
 
 admin.site.register(Women, WomenAdmin)
 admin.site.register(Category, CategoryAdmin)
